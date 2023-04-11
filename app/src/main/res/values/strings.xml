@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KanyeRest</string>
+    <string name="quote_day">Mensagem kanye do dia</string>
 </resources>
