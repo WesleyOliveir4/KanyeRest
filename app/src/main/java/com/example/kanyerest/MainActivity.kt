@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
+    private val mainViewModel = MainViewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -27,5 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val tvQuotes = binding.tvQuotes
         val btnQuotesSearch = binding.btnQuotesSearch
+
+        mainViewModel.searchQuote(btnQuotesSearch)
     }
 }
