@@ -1,10 +1,15 @@
-package com.example.kanyerest
+package com.example.kanyerest.presentation.activity
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
+import androidx.lifecycle.Observer
 import com.example.kanyerest.databinding.ActivityMainBinding
+import com.example.kanyerest.presentation.state.MainState
+import com.example.kanyerest.presentation.viewmodel.MainViewModel
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +34,20 @@ class MainActivity : AppCompatActivity() {
 
         val tvQuotes = binding.tvQuotes
         val btnQuotesSearch = binding.btnQuotesSearch
+        mainViewModel.state.observe(this, Observer { state ->
+            when(state){
+                is MainState.ShowItems -> {
 
-        mainViewModel.searchQuote(btnQuotesSearch)
+                    tvQuotes.text = state.items
+
+                }
+                else -> Log.d("stateHomeActivity", "retornou com erro")
+        }
+        })
+        MainScope().launch {
+            mainViewModel.searchQuote(btnQuotesSearch)
+        }
     }
+
+
 }

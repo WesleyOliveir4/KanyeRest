@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.activity.MainActivity">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_quotes"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="210dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="Hello World!"
+        tools:text="ye"
         android:textAlignment="center"
         style="@style/editTextStyle"
         app:layout_constraintBottom_toBottomOf="parent"
