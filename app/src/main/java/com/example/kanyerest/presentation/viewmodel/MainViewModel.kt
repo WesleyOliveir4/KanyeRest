@@ -2,9 +2,8 @@ package com.example.kanyerest.presentation.viewmodel
 
 import android.R
 import android.content.Context
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.view.View
+import android.widget.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -38,6 +37,16 @@ class MainViewModel() : ViewModel() {
             spinner.adapter = this
         }
 
+        spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                val itemAtPosition = spinner.getItemAtPosition(position)
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
 
     }
 
@@ -47,7 +56,7 @@ class MainViewModel() : ViewModel() {
             _state.postValue(MainState.ShowItems(response))
         }
     }
-    
+
 
 
 }
