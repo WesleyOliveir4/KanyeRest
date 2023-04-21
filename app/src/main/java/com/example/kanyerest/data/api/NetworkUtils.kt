@@ -14,16 +14,6 @@ class NetworkUtils {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }
-
-        fun getOkHttp3Instance(path: String): Request {
-            return  Request.Builder()
-                .url(path)
-                .get()
-                .addHeader("X-RapidAPI-Key", "SIGN-UP-FOR-KEY")
-                .addHeader("X-RapidAPI-Host", "nlp-translation.p.rapidapi.com")
-                .build()
-        }
-
     }
 
 

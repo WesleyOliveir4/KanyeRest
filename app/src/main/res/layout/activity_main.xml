@@ -8,35 +8,18 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_quotes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="210dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        tools:text="ye"
-        android:textAlignment="center"
         style="@style/editTextStyle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_quotes_translated"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        tools:text="..."
         android:textAlignment="center"
-        style="@style/editTextStyle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_quotes_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_quotes"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="ye" />
 
     <Button
         android:id="@+id/btn_quotes_search"
@@ -47,10 +30,9 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_quotes"
-        app:layout_constraintVertical_bias="0.0" />
+        />
 
     <ImageView
         android:id="@+id/imageView"
@@ -64,17 +46,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
-    <Spinner
-        android:id="@+id/spinner_languages"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_quotes_search"
-        app:layout_constraintEnd_toEndOf="@+id/tv_quotes_translated"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_quotes_translated"
-        app:layout_constraintTop_toBottomOf="@+id/tv_quotes_translated"
-         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

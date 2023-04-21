@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
-import android.widget.ArrayAdapter
 import androidx.lifecycle.Observer
-import com.example.kanyerest.R
 import com.example.kanyerest.databinding.ActivityMainBinding
 import com.example.kanyerest.presentation.state.MainState
 import com.example.kanyerest.presentation.viewmodel.MainViewModel
@@ -36,16 +34,12 @@ class MainActivity : AppCompatActivity() {
 
         val tvQuotes = binding.tvQuotes
         val btnQuotesSearch = binding.btnQuotesSearch
-        val spinnerLanguages = binding.spinnerLanguages
-
-        mainViewModel.translateQuote(spinnerLanguages,"state.items",applicationContext)
 
         mainViewModel.state.observe(this, Observer { state ->
             when(state){
                 is MainState.ShowItems -> {
 
                     tvQuotes.text = state.items
-                    mainViewModel.translateQuote(spinnerLanguages,state.items,applicationContext)
 
                 }
                 else -> Log.d("stateHomeActivity", "retornou com erro")
