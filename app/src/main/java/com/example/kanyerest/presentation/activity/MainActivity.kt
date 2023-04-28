@@ -10,6 +10,7 @@ import com.example.kanyerest.presentation.state.MainState
 import com.example.kanyerest.presentation.viewmodel.MainViewModel
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    private val mainViewModel = MainViewModel()
+    private val mainViewModel : MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
