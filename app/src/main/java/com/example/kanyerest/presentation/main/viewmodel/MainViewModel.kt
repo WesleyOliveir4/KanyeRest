@@ -1,4 +1,4 @@
-package com.example.kanyerest.presentation.viewmodel
+package com.example.kanyerest.presentation.main.viewmodel
 
 import android.R
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.kanyerest.presentation.activity
+package com.example.kanyerest.presentation.main.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.WindowManager
 import androidx.lifecycle.Observer
 import com.example.kanyerest.databinding.ActivityMainBinding
 import com.example.kanyerest.presentation.state.MainState
-import com.example.kanyerest.presentation.viewmodel.MainViewModel
+import com.example.kanyerest.presentation.main.viewmodel.MainViewModel
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
