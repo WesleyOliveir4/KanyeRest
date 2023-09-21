@@ -1,12 +1,12 @@
 package com.example.kanyerest.data.repository.quotes
 
 import com.example.kanyerest.data.api.NetworkUtils
-import com.example.kanyerest.data.model.QuoteModel
 import com.example.kanyerest.data.request.EndpointQuotes
+import com.example.kanyerest.domain.quotes.QuotesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class QuotesRepositoryImpl():QuotesRepository {
+class QuotesUseCaseImpl(): QuotesUseCase {
 
     override suspend fun fetchCurrencies(): String {
         return withContext(Dispatchers.IO) {

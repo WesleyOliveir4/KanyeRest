@@ -1,4 +1,4 @@
-package com.example.kanyerest.data.model
+package com.example.kanyerest.domain.model
 
 import com.google.gson.annotations.SerializedName
 
