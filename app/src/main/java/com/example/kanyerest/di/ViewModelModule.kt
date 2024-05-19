@@ -10,7 +10,7 @@ val viewModelModule = module {
 
     viewModel {
           MainViewModel(
-              quotesRepository = get()
+              quotesUseCase = get()
           )
     }
 

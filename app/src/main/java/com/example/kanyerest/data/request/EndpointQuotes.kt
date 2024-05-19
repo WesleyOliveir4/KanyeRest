@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface EndpointQuotes {
     @GET("https://api.kanye.rest")
-    suspend fun getCurrencies() : QuoteModel
+    suspend fun getQuote() : QuoteModel
 }
