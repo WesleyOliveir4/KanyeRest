@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.WindowManager
 import androidx.lifecycle.Observer
 import com.example.kanyerest.databinding.ActivityMainBinding
-import com.example.kanyerest.presentation.state.MainState
+import com.example.kanyerest.presentation.state.QuoteState
 import com.example.kanyerest.presentation.main.viewmodel.MainViewModel
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -34,11 +34,10 @@ class MainActivity : AppCompatActivity() {
         )
 
         val tvQuotes = binding.tvQuotes
-        val btnQuotesSearch = binding.btnQuotesSearch
 
         mainViewModel.state.observe(this, Observer { state ->
             when(state){
-                is MainState.ShowItems -> {
+                is QuoteState.ShowItems -> {
 
                     tvQuotes.text = state.items
 
@@ -46,8 +45,11 @@ class MainActivity : AppCompatActivity() {
                 else -> Log.d("stateHomeActivity", "retornou com erro")
         }
         })
-        MainScope().launch {
-            mainViewModel.searchQuote(btnQuotesSearch)
+
+        binding.btnQuotesSearch.setOnClickListener(){
+            MainScope().launch {
+                mainViewModel.searchQuote()
+            }
         }
     }
 

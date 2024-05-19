@@ -12,7 +12,7 @@ class QuotesUseCaseImpl(): QuotesUseCase {
         return withContext(Dispatchers.IO) {
             val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.kanye.rest")
             val endpoint = retrofitClient.create(EndpointQuotes::class.java)
-            endpoint.getCurrencies().quote?: ""
+            endpoint.getQuote().quote?: ""
         }
     }
 
