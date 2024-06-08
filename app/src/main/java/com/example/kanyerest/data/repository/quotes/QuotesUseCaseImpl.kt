@@ -1,5 +1,6 @@
 package com.example.kanyerest.data.repository.quotes
 
+import androidx.lifecycle.LiveData
 import com.example.kanyerest.data.api.NetworkUtils
 import com.example.kanyerest.data.database.QuotesDatabase
 
@@ -10,6 +11,7 @@ import com.example.kanyerest.domain.model.QuoteModel
 import com.example.kanyerest.domain.quotes.QuotesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.util.*
 
 
 class QuotesUseCaseImpl(private val quotesDatabase : QuotesDatabase): QuotesUseCase, QuotesDatabaseUseCase {
@@ -32,13 +34,14 @@ class QuotesUseCaseImpl(private val quotesDatabase : QuotesDatabase): QuotesUseC
         quotesDatabase.myQuotesDao().insertQuotes(
             QuoteDatabaseModel(
                 null,
-                quoteText
+                quoteText,
+                Date().toString()?: ""
             )
         )
     }
 
-    override suspend fun fetchData(): String {
-        TODO("Not yet implemented")
+    override fun fetchData(): LiveData<List<QuoteDatabaseModel>> {
+        return quotesDatabase.myQuotesDao().getQuotes()
     }
 
 }

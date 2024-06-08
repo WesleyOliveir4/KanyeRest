@@ -1,4 +1,4 @@
-package com.example.kanyerest.di.modules
+package com.example.kanyerest.di
 
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.kanyerest.presentation.main.viewmodel.MainViewModel
@@ -10,7 +10,8 @@ val viewModelModule = module {
 
     viewModel {
           MainViewModel(
-              quotesUseCase = get()
+              quotesUseCase = get(),
+              quotesDatabaseUseCase = get()
           )
     }
 

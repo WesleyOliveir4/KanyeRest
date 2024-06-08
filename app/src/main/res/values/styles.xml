@@ -11,4 +11,9 @@
         <item name="android:layout_marginTop">15dp</item>
     </style>
 
+    <style name="NameActionBar">
+<!--        <item name="windowActionBar">true</item>-->
+    </style>
+
+
 </resources>
