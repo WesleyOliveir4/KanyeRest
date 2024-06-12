@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import java.util.Date
 
 data class QuoteModel(
     @SerializedName("quote")
@@ -16,4 +17,5 @@ data class QuoteDatabaseModel(
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null,
     val quote: String?,
+    val date: String?
 ): Parcelable

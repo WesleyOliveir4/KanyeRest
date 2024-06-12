@@ -11,7 +11,7 @@ import com.example.kanyerest.domain.model.QuoteDatabaseModel
 interface QuotesDao {
 
     @Query("SELECT * FROM Quotes")
-    fun getQuotes(): LiveData<List<QuoteDatabaseModel>>
+    fun getQuotes(): List<QuoteDatabaseModel>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertQuotes(quoteDatabaseModel: QuoteDatabaseModel)

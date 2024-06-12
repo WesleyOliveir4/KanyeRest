@@ -2,7 +2,7 @@ package com.example.kanyerest
 
 import android.app.Application
 import com.example.kanyerest.di.repositoryModule
-import com.example.kanyerest.di.modules.viewModelModule
+import com.example.kanyerest.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
