@@ -22,7 +22,7 @@ class MainViewModel(val quotesUseCase: QuotesUseCase, val quotesDatabaseUseCase:
         }
     }
 
-     fun fetchListQuotes(): LiveData<List<QuoteDatabaseModel>>{
+     fun fetchListQuotes(): List<QuoteDatabaseModel>{
         return quotesDatabaseUseCase.fetchData()
     }
 

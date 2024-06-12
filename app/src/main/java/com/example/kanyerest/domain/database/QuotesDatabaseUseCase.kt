@@ -8,6 +8,6 @@ interface QuotesDatabaseUseCase{
 
  suspend fun  saveData(quoteText: String)
 
- fun  fetchData() : LiveData<List<QuoteDatabaseModel>>
+ fun  fetchData() :List<QuoteDatabaseModel>
 
 }

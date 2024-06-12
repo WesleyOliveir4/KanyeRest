@@ -40,7 +40,7 @@ class QuotesUseCaseImpl(private val quotesDatabase : QuotesDatabase): QuotesUseC
         )
     }
 
-    override fun fetchData(): LiveData<List<QuoteDatabaseModel>> {
+    override fun fetchData(): List<QuoteDatabaseModel> {
         return quotesDatabase.myQuotesDao().getQuotes()
     }
 

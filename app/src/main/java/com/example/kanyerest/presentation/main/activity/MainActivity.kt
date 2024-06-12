@@ -70,18 +70,5 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-//            when(item.itemId){
-//                R.id.historico_menu -> {
-//                    startActivity(Intent(this, HistoryActivity::class.java))
-//                }
-//                else -> {}
-//            }
-
-
-
-    }
-
 
 }
